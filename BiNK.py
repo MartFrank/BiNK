@@ -125,8 +125,10 @@ def req4(data_list):
     wanted_date = [x for x in data_list if x[-4] > early_date and x[-4] < later_date ]
     
     for row in wanted_date:
+        ## show the dates some formatting
+        row[-4] = row[-4].strftime("%d/%m/%Y")
+        row[-3] = row[-3].strftime("%d/%m/%Y")
         print(row)
-
 
 
 
