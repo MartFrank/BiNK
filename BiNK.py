@@ -133,6 +133,12 @@ def req4(data_list):
         print(row)
 
 
+def runall(data_list):
+    ## call them all  
+    req1(data_list)
+    req2(data_list)
+    req3(data_list)
+    req4(data_list)
 
 
 if __name__=="__main__":
@@ -141,24 +147,32 @@ if __name__=="__main__":
     #~ Allow user input to run all of your script, or specific sections
     #~ multiple variations of Tenant Name - treat these as individual tenants.
 
-    
+    ## always read this in
     data_list = read_data("Python Developer Test Dataset.csv")
     
-    ## call them all  
-    req1(data_list)
-    req2(data_list)
-    req3(data_list)
-    req4(data_list)
     
     option = input("""
-    
-    Enter a number to execute that Requirement or 0 to run all
         0 : Run all
         1 : Requirement 1
         2 : Requirement 2
         3 : Requirement 3
         4 : Requirement 4    
     """)
+    
+    if option == '0':
+        runall(data_list)
+    elif option == '1':
+        req1(data_list)
+    elif option == '2':
+        req2(data_list)
+    elif option == '3':
+        req3(data_list)
+    elif option == '4':
+        req4(data_list)
+    else:
+        print("Invalid option")
+    
+    
     
     
     
