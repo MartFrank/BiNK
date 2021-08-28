@@ -59,11 +59,13 @@ def req1(data_list):
     Read in the attached file
         Produce a list sorted by Current Rent in ascending order
         Obtain the first 5 items from the resultant list and output to the console
-        
+    
+    
+    
+    
     """
     ## sort it by Current Rent (the last column)
-    index_number = -1
-    sorted_data = sorted(data_list, key=lambda x:x[index_number]) 
+    sorted_data = sorted(data_list, key=lambda x:x[-1]) 
     
     print("Lowest 5 current rents :")
     ## print the top 5
@@ -143,10 +145,34 @@ if __name__=="__main__":
     data_list = read_data("Python Developer Test Dataset.csv")
     
     ## call them all  
-    #~ req1(data_list)
-    #~ req2(data_list)
-    #~ req3(data_list)
+    req1(data_list)
+    req2(data_list)
+    req3(data_list)
     req4(data_list)
+    
+    option = input("""
+    
+    Enter a number to execute that Requirement or 0 to run all
+        0 : Run all
+        1 : Requirement 1
+        2 : Requirement 2
+        3 : Requirement 3
+        4 : Requirement 4    
+    """)
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 
 
