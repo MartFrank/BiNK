@@ -59,6 +59,7 @@ def req1(data_list):
     Read in the attached file
         Produce a list sorted by Current Rent in ascending order
         Obtain the first 5 items from the resultant list and output to the console
+        
     """
     ## sort it by Current Rent (the last column)
     index_number = -1
@@ -77,6 +78,7 @@ def req2(data_list):
     From the list of all mast data, create a new list of mast data with Lease Years = 25 years.
         Output the list to the console, including all data fields
         Output the total rent for all items in this list to the console
+        
     """
     ## filter only the 25 year least row into a new list
     twenty_five = [x for x in data_list if x[-2] == 25]
@@ -91,11 +93,10 @@ def req2(data_list):
 def req3(data_list):
     """
     Requirement 3
+    
     Create a dictionary containing tenant name and a count of masts for each tenant
         Output the dictionary to the console in a readable form
     
-    
-    -5 is Tenant Name
     """
     tenant_masts = {}
     for row in data_list:
@@ -105,12 +106,27 @@ def req3(data_list):
         else:
             tenant_masts[tenant_name] = 1
     print("Tenant Name & Mast Count : ")
-    for name, count in tenant_masts.items():
-        print("%-60s : %d" %(name, count))
+    pprint.pprint(tenant_masts)
 
-## req 4
-#~ List the data for rentals with Lease Start Date between 1st June 1999 and 31st August 2007
-    #~ Output the data to the console with dates formatted as DD/MM/YYYY
+
+def req4(data_list):
+    """
+    Requirement 4
+
+    List the data for rentals with Lease Start Date between 1st June 1999 and 31st August 2007
+        Output the data to the console with dates formatted as DD/MM/YYYY
+        
+    """
+    early_date = datetime(1999, 6, 1)
+    later_date = datetime(2007, 8, 31)
+    
+    
+    ## filter only those with date inside the wanted  range
+    wanted_date = [x for x in data_list if x[-4] > early_date and x[-4] < later_date ]
+    
+    for row in wanted_date:
+        print(row)
+
 
 
 
@@ -127,7 +143,8 @@ if __name__=="__main__":
     ## call them all  
     #~ req1(data_list)
     #~ req2(data_list)
-    req3(data_list)
+    #~ req3(data_list)
+    req4(data_list)
 
 
 
