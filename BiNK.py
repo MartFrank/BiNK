@@ -9,12 +9,13 @@ from datetime import datetime
 
 import pprint
 
+## global's are bad ok!
 DEBUG = 0
 
 
 def read_data(filename):
     """
-    Read the given csv file and reetunb a list object with the columns typed for use
+    Read the given csv file and return a list object with the columns typed for use
     """
     fin = open(filename, "rt")
     ## skip header
@@ -57,11 +58,8 @@ def req1(data_list):
     Requirement 1
     
     Read in the attached file
-        Produce a list sorted by Current Rent in ascending order
+        Produce a list sorted by Current Rent in ascending order (performed in the read_data function above)
         Obtain the first 5 items from the resultant list and output to the console
-    
-    
-    
     
     """
     ## sort it by Current Rent (the last column)
